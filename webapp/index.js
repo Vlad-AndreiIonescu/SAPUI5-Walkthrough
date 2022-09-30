@@ -1,9 +1,14 @@
-sap.ui.define([
-    "sap/m/Text" //sap/m -> control library .. /Text -> control name
-], function (Text) {
-    "use strict";
 
-    new Text({  //cream un ob pt control, setam at text cu val hw
-        text:"Hello World"
-    }).placeAt("content");// face legatura cu id ul din html si l pune acolo
-})
+
+sap.ui.define([
+	"sap/ui/core/mvc/XMLView"// definim XMLVIEW
+], function (XMLView) {//pasam ob XMLView in callbackfunction
+	"use strict";
+
+	XMLView.create({//cream un nou view
+		viewName: "sap.ui.demo.walkthrough.view.App"//avem nev de viewName care e locatia xml ului nostru
+	}).then(function (oView) {
+		oView.placeAt("content");//plasam view-ul nostru in body prin content
+	});
+
+});
